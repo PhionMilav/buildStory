@@ -12,50 +12,33 @@
 		return array
 	}
 
-	openingImageInput0 = ("There, on a sprawling " + landscape + " under a bleak sky and with the gentle turning of worlds in my ears, is where the story began");
-	openingImageInput1 = ("There, within the milky mists of a " + landscape + " with the adventures all behind me and the quiet settling into my chest, is where the story began");
+	openingImageInput0 = ("There, on a sprawling " + landscape + " under a bleak sky and with the gentle turning of worlds in my ears, is where the story began.");
+	openingImageInput1 = ("There, within the milky mists of a " + landscape + " with the adventures all behind me and the quiet settling into my chest, is where the story began.");
 	openingImageInput2 = ("There, right on the rough " + landscape + " is where the story began, and that, my friends, is a fact.");
 	myOpeningImage = [openingImageInput0 , openingImageInput1, openingImageInput2];
 	myOpeningImage = shuffle(myOpeningImage);
+	myRealOpeningImage = myOpeningImage.slice(0,1);
 
-	closingImageInput0 = ("There, on that sprawling " + landscape + " under that bleak sky and with the gentle turning of worlds in my ears, is where the story ended");
-	closingImageInput1 = ("There, within the milky mists of a " + landscape + " with the adventures all behind me and the quiet settling into my chest, is where the story ended");
-	closingImageInput2 = ("There, right on the rough " + landscape + " is where the story ended and that, my friends, is a fact.");
+	closingImageInput0 = (" There, on that sprawling " + landscape + " under that bleak sky and with the gentle turning of worlds in my ears, is where the story ended");
+	closingImageInput1 = (" There, within the milky mists of a " + landscape + " with the adventures all behind me and the quiet settling into my chest, is where the story ended");
+	closingImageInput2 = (" There, right on the rough " + landscape + " is where the story ended and that, my friends, is a fact.");
 	myClosingImage = [closingImageInput0 ,closingImageInput1, closingImageInput2];
 
-var connectParts = (word, placeToSearch) => {
-
-	var text = placeToSearch;
-	var query = word;
-	var matchCount = 0;
-
-
-	for (var counter = 0; counter < text.length; counter++) {
-	  	
-	  	if((text[counter] == query[0]) && (text.length-counter >= query.length))
-	  
-	{
-		var match = true;
-
-		for(var counter1 = 0; counter1 < query.length; counter1++);
-
-			{
-				if(!(text[counter+counter1] == query[counter1]))
-				{
-					match = false;
-					
-					break;
-
-				}
-			}
-
-			if(match==true)
-			{
-				matchCount++;
-			}
-	  }  
+var connectParts = () => {
+	const a = myRealOpeningImage[0].indexOf("sprawling");
+	const b = myRealOpeningImage[0].indexOf("milky");
+	const c = myRealOpeningImage[0].indexOf("rough");
+	if (a >= 1) {
+		thisClosingImage = closingImageInput0
 	}
-	return matchCount;
-}
+	else if (b >= 1) {
+		thisClosingImage = closingImageInput1
+	}
+	else if (c >= 1) {
+		thisClosingImage = closingImageInput2
+	}
 
-console.log("The count is " + connectParts("sprawling", "While I pondered on a sprawling pond..."));
+}
+	
+connectParts();
+console.log(openingImageInput0 + thisClosingImage);
