@@ -1,0 +1,24 @@
+body{
+	background-color: #ddd9e2;
+}
+
+#header {
+	background-color: #5e5a7f;
+	color: white;
+	text-align: center;
+}
+
+#container {
+	background-color: #ddd9e2;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+#content {
+	background-color: #ddd9e2;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}

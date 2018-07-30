@@ -1,6 +1,5 @@
 
 var db = {
-	test: "Yeah!",
 	getPlotPoints: function (type, requiredIds = [], allowedIds = [], forbiddenIds =[]) {
 		const validPlotPoints = [];
 
@@ -10,16 +9,16 @@ var db = {
 					// if it's an Opening Image, we do not restrict it ever
 				validPlotPoints.push(pp);
 				}
-				else if (forbiddenIds.indexOf(pp.id) >= 0) {
-					// if it is forbidden, we don't do anything and continue with the next item
-					continue;
-				}
 				else if (requiredIds.indexOf(pp.id) >= 0) {
 					// if it's a required PlotPoint, we HAVE to take it in
 					return pp;
 				}
+				else if (forbiddenIds.indexOf(pp.id) >= 0) {
+					// if it is forbidden, we don't do anything and continue with the next item
+					continue;
+				}
 				else if (allowedIds.indexOf(pp.id) >= 0) {
-					// things have to be allowed AND not forbidden
+					// if things are not required, they need to be not forbidden AND allowed to get in
 					validPlotPoints.push(pp);
 				}
 			}
@@ -37,7 +36,7 @@ const PlotPoints = [];
 
 PlotPoints.push({
 //TODO: All plotpoint texts need to be strings, not arrays
-	text: ["There, on a sprawling  %landscape% under a bleak sky and with the gentle turning of worlds in my ears, is where the story began. "],
+	text: "There, on a sprawling  %landscape% under a bleak sky and with the gentle turning of worlds in my ears is where the story began.",
 	type: "openingImage",
 	id: "openingImageA",
 	validFutures: [
@@ -47,7 +46,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: ["setUpA", "setUpB", "setUpC"]
+		ids: ["setUpA", "setUpB", "setUpC", "catalystA", "catalystB", "catalystC", "bStoryA", "bStoryB", "bStoryC", "cStoryA", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -56,7 +55,7 @@ PlotPoints.push({
 });
 
 PlotPoints.push({
-	text: "There, within the milky mists of a %landscape% with the adventures all in front of me and the quiet settling into my chest, is where the story began.",
+	text: "There, within the milky mists of a %landscape% with the adventures all in front of me and the quiet settling into my chest is where the story began.",
 	type: "openingImage",
 	id: "openingImageB",
 	validFutures: [
@@ -66,7 +65,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: ["setUpA", "setUpB", "setUpC"]
+		ids: ["setUpA", "setUpB", "setUpC", "catalystA", "catalystB", "catalystC", "bStoryA", "bStoryB", "bStoryC", "cStoryA", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -76,7 +75,7 @@ PlotPoints.push({
 
 
 PlotPoints.push({
-	text: "There, right on the rough %landscape% is where the story began, and that, my friends, is a fact.",
+	text: "There, right on the rough %landscape% is where the story began and that, my friends, is a fact.",
 	type: "openingImage",
 	id: "openingImageC",
 	validFutures: [
@@ -86,7 +85,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: ["setUpA", "setUpB", "setUpC"]
+		ids: ["setUpA", "setUpB", "setUpC", "catalystA", "catalystB", "catalystC", "bStoryA", "bStoryB", "bStoryC", "cStoryA", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -102,11 +101,11 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: ["bStoryA"]
+		ids: ["bStoryA", "catalystA"]
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["catalystA", "bStoryA", "cStoryA", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -116,7 +115,7 @@ PlotPoints.push({
 
 PlotPoints.push({
 // set up about aliens
-	text: "And there I stood. Mortified. Just hours ago, I’d been far away, very far away, actually, because I’d still been on my home planet, in my home galaxy. Where people knew my name, knew what I was, what I could do and what I could not. And now I found myself here, at the edge of an unfolding adventure, alone. My name, before I came here, was %name%. And I was and still am an alien. Now, where I come from, we don’t tell stories, because we all know everything, all of the time. But here, in this world, if I want you to know how I came to be here, I will have to tell you. So, listen carefully, for I shall only tell this story once:",
+	text: "I stood there. Mortified. Just hours ago, I’d been far away, very far away, actually, because I’d still been on my home planet, in my home galaxy. Where people knew my name, knew what I was, what I could do and what I could not. And now I found myself here, at the edge of an unfolding adventure, alone. My name, before I came here, was %name%. And I was and still am an alien. Now, where I come from, we don’t tell stories, because we all know everything, all of the time. But here, in this world, if I want you to know how I came to be here, I will have to tell you. So, listen carefully, for I shall only tell this story once:",
 	type: "setUp",
 	id: "setUpB",
 	validFutures: [
@@ -126,7 +125,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["catalystB", "catalystC", "bStoryC", "cStoryA", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -137,17 +136,17 @@ PlotPoints.push({
 
 PlotPoints.push({
 // set up about elves
-	text: "When I look back, it all seems very strange to me. There I was, right on that spot, thinking to myself, %name%, what have you stumbled into here? I had no answer back then, because the things I knew most about where what kinds of leaf to eat and which to leave hanging on the tree. I am an elf and I grew up on a tree and I never thought I would leave it in my life, but I did. And now, I shall tell you why:",
+	text: "When I look back to that moment now, it all seems very strange to me. There I was, right on that spot, thinking to myself, %name%, what have you stumbled into here? I had no answer back then, because the things I knew most about where what kinds of leaf to eat and which to leave hanging on the tree. I am an elf and I grew up on a tree and I never thought I would leave it in my life, but I did. And now, I shall tell you why:",
 	type: "setUp",
 	id: "setUpC",
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: ["bStoryB"]
+		ids: ["bStoryB", "catalystA"]
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["catalystA", "bStoryB", "cStoryA", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -163,15 +162,15 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: [""]
+		ids: []
 	},
 	{
 		rule: "allowedIds",
-		ids: [""]
+		ids: ["bStoryA", "bStoryB", "cStoryA", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
-		ids: [""]
+		ids: ["bStoryC"]
 	}]
 });
 
@@ -188,11 +187,11 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: [""]
+		ids: ["bStoryA", "bStoryB", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
-		ids: [""]
+		ids: ["bStoryC", "cStoryA"]
 	}]
 });
 
@@ -204,15 +203,15 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: []
+		ids: ["bStoryC"]
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["bStoryC", "cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
-		ids: []
+		ids: ["cStoryA"]
 	}]
 });
 
@@ -228,7 +227,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["cStoryA"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -238,7 +237,7 @@ PlotPoints.push({
 
 PlotPoints.push({
 	//bStory for elf
-	text: "  So, this is how I left the place I came from and ended up at the beginning of this adventure though, of course, I did not know that yet. I was still in the middle of my home forest, so I simply started walking off towards the setting sun. I walked deep into the night and when I was too tired to walk any further, I found a tree I’d never seen before and climbed up into the branches. I lay my body down unto one of the big ones, because I was scared to climb up high and tried to sleep, but when I was just dosing off, I heard a noise, a little like a very high-pitched snore…",
+	text: " So, this is how I left the place I came from and ended up at the beginning of this adventure though, of course, I did not know that yet. I was still in the middle of my home forest, so I simply started walking off towards the setting sun. I walked deep into the night and when I was too tired to walk any further, I found a tree I’d never seen before and climbed up into the branches. I lay my body down unto one of the big ones, because I was scared to climb up high and tried to sleep, but when I was just dosing off, I heard a noise, a little like a very high-pitched snore…",
 	type: "bStory",
 	id: "bStoryB",	
 	validFutures: [
@@ -248,7 +247,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["cStoryA"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -268,7 +267,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["cStoryB"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -280,7 +279,7 @@ PlotPoints.push({
 
 PlotPoints.push({
 	//generic c-story, inserting Me as a character
-	text: " “Who’s there”? I called out, trying hard to keep my voice as calm as I surely was not. “Uhm… me?” said a meek little voice from down on the ground. “Who’s asking?” I told the thing that I still got not say who I was. I gave it my name. %name%. And it took me a long and difficult to explain sort of conversation to find out that the things name actually was Me.",
+	text: " 'Who’s there?' I called out, trying hard to keep my voice as calm as I surely was not. 'Uhm… me?' said a meek little voice from down on the ground. “Who’s asking?” I told the thing that I still got not say who I was. I gave it my name. %name%. And it took me a long and difficult to explain sort of conversation to find out that the things name actually was Me.",
 	type: "cStory",
 	id: "cStoryA",
 	validFutures: [
@@ -302,9 +301,9 @@ PlotPoints.push({
 
 PlotPoints.push({
 	// cStory for aliens, inserting Squisch as a character
-	text: " “What are you?” I asked, looking down at the squishiness now right next to my foot. “I’m Squisch, thank you very much, don’t apologize for stepping on my head, oh no, why would you!” answered the little…well, answered Squisch. “What are you?” I repeated the question, because I wasn’t sure I’d gotten the answer yet.",
+	text: " 'What are you?' I asked, looking down at the squishiness now right next to my foot. 'I am Squisch, thank you very much, do not apologize for stepping on my head, oh no, why would you!' answered the little…well, answered Squisch. 'What are you?' I repeated the question, because I wasn’t sure I’d gotten the answer yet.",
 	type: "cStory",
-	id: "cStoryA",
+	id: "cStoryB",
 	validFutures: [
 	{
 		rule: "requiredIds",

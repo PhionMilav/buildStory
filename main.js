@@ -5,7 +5,6 @@
 	var inputElementtwo = document.getElementById("landscape");
 	var inputElementthree = document.getElementById("name");
 
-//const db = require('./db.js');
 
 	let ppOpeningImage;
 	let ppSetUp;
@@ -19,6 +18,32 @@ const forbiddenFutureIds = [];
 const selectedPlotPoints = [];
 const texts = [];
 
+
+
+
+function buildStory() {
+  ppOpeningImage = db.getPlotPoints("openingImage");
+  selectedPlotPoints.push(ppOpeningImage);
+  populateFutureIds(ppOpeningImage);
+
+  ppSetUp = db.getPlotPoints("setUp", requiredFutureIds, allowedFutureIds, forbiddenFutureIds);
+  selectedPlotPoints.push(ppSetUp);
+  populateFutureIds(ppSetUp);
+
+  ppCatalyst = db.getPlotPoints("catalyst", requiredFutureIds, allowedFutureIds, forbiddenFutureIds);
+  selectedPlotPoints.push(ppCatalyst);
+  populateFutureIds(ppCatalyst);
+
+  ppBStory = db.getPlotPoints("bStory", requiredFutureIds, allowedFutureIds, forbiddenFutureIds);
+  selectedPlotPoints.push(ppBStory);
+  populateFutureIds(ppBStory);
+
+  ppCStory = db.getPlotPoints("cStory", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
+  selectedPlotPoints.push(ppCStory);
+  populateFutureIds(ppCStory);
+  
+ 
+}
 
 
 function populateFutureIds(plotPoint){
@@ -48,39 +73,13 @@ function printStory(color, landscape, name) {
 
   for (let pp of selectedPlotPoints) {
     const text = pp.text
-            .replace(/%color%/g, color)
             .replace(/%landscape%/g, landscape)
+            .replace(/%color%/g, color)
             .replace(/%name%/g, name);
     texts.push(text);
-  }
-}
+  };
+};
 
-
-
-
-function buildStory() {
-  ppOpeningImage = db.getPlotPoints("openingImage");
-  selectedPlotPoints.push(ppOpeningImage);
-  populateFutureIds(ppOpeningImage);
-
-  ppSetUp = db.getPlotPoints("setUp", requiredFutureIds, allowedFutureIds, forbiddenFutureIds);
-  selectedPlotPoints.push(ppSetUp);
-  populateFutureIds(ppSetUp);
-
-  ppCatalyst = db.getPlotPoints("catalyst", requiredFutureIds, allowedFutureIds, forbiddenFutureIds);
-  selectedPlotPoints.push(ppCatalyst);
-  populateFutureIds(ppCatalyst);
-
-  /*ppBStory = db.getPlotPoints("bStory", requiredFutureIds, allowedFutureIds, forbiddenFutureIds);
-  selectedPlotPoints.push(ppBStory);
-  populateFutureIds(ppBStory);
-
-  ppCStory = db.getPlotPoints("cStory", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
-  selectedPlotPoints.push(ppCStory);
-  populateFutureIds(ppCStory);
-  */
- 
-}
 
 
 
@@ -93,5 +92,5 @@ function buildStory() {
 		buildStory();
 		printStory(color, landscape, name);
 		const story = texts.join();
-		console.log(story); //prints .text WITH variable replacements
+		document.getElementById("output").innerHTML = story;
 		});
