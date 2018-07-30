@@ -12,11 +12,11 @@
 	let ppBStory;
 	let ppCStory;
 
-const requiredFutureIds = [];
-const allowedFutureIds = [];
-const forbiddenFutureIds = [];
-const selectedPlotPoints = [];
-const texts = [];
+	let requiredFutureIds = [];
+	let allowedFutureIds = [];
+	let forbiddenFutureIds = [];
+	let selectedPlotPoints = [];
+	let texts = [];
 
 
 
@@ -45,6 +45,13 @@ function buildStory() {
  
 }
 
+function reset() {  
+  requiredFutureIds = [];
+  allowedFutureIds = [];
+  forbiddenFutureIds = [];
+  selectedPlotPoints = [];
+  texts = [];
+}
 
 function populateFutureIds(plotPoint){
 
@@ -70,7 +77,7 @@ function populateFutureIds(plotPoint){
 
 
 function printStory(color, landscape, name) {
-
+texts = [];
   for (let pp of selectedPlotPoints) {
     const text = pp.text
             .replace(/%landscape%/g, landscape)
@@ -89,8 +96,22 @@ function printStory(color, landscape, name) {
 		var landscape = inputElementtwo.value;
 		var name = inputElementthree.value;
 
+		reset();
 		buildStory();
 		printStory(color, landscape, name);
-		const story = texts.join();
-		document.getElementById("output").innerHTML = story;
+		
+		const outputDiv = document.getElementById("output");
+		outputDiv.innerHTML = '';
+		for (let text of texts) {
+		    const textDiv = document.createElement('div');
+		    textDiv.classList.add('text');
+		    textDiv.innerHTML = text;
+		    outputDiv.appendChild(textDiv);
+		    //trigger animations
+    		setTimeout(function() {
+      		textDiv.classList.add('active');
+    		}, 20);
+
+		  }
+
 		});

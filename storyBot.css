@@ -22,3 +22,22 @@ body{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+#output.text {
+  padding: 12px 0 12px 0;
+}
+
+#output.text {
+  padding: 12px 0 12px 0;
+  transition: 
+    opacity 1s ease,
+    color 1s ease 1s;
+  opacity: 0;
+}
+
+#output.text.active {
+  opacity: 1;
+  color: purple;
+}
+
+
