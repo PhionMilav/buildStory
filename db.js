@@ -101,7 +101,7 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: ["bStoryA", "catalystA"]
+		ids: ["bStoryA", "catalystA", "finaleB"]
 	},
 	{
 		rule: "allowedIds",
@@ -125,7 +125,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: ["catalystB", "catalystC", "bStoryC", "cStoryA", "cStoryB"]
+		ids: ["catalystB", "catalystC", "bStoryC", "cStoryA", "cStoryB", "finaleC", "finaleD"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -136,13 +136,13 @@ PlotPoints.push({
 
 PlotPoints.push({
 // set up about elves
-	text: "When I look back to that moment now, it all seems very strange to me. There I was, right on that spot, thinking to myself, %name%, what have you stumbled into here? I had no answer back then, because the things I knew most about where what kinds of leaf to eat and which to leave hanging on the tree. I am an elf and I grew up on a tree and I never thought I would leave it in my life, but I did. And now, I shall tell you why:",
+	text: "When I look back to that moment now, it all seems very strange to me. There I was, right on that spot, thinking to myself, %name%, what have you stumbled into here? I had no answer back then, because the things I knew most about where what kinds of leaf to eat and which to leave hanging on the tree. I am an elf and I grew up on a tree and I never thought I would leave the forest in my life, but I did. And now, I shall tell you why:",
 	type: "setUp",
 	id: "setUpC",
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: ["bStoryB", "catalystA"]
+		ids: ["bStoryB", "catalystA", "finaleA"]
 	},
 	{
 		rule: "allowedIds",
@@ -162,7 +162,7 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: []
+		ids: ["promiseA"]
 	},
 	{
 		rule: "allowedIds",
@@ -173,6 +173,7 @@ PlotPoints.push({
 		ids: ["bStoryC"]
 	}]
 });
+
 
 
 PlotPoints.push({
@@ -278,8 +279,8 @@ PlotPoints.push({
 
 
 PlotPoints.push({
-	//generic c-story, inserting Me as a character
-	text: " 'Who’s there?' I called out, trying hard to keep my voice as calm as I surely was not. 'Uhm… me?' said a meek little voice from down on the ground. “Who’s asking?” Asked the thing. I gave it my name. %name%. And it took me a long and difficult to explain sort of conversation to find out that the things name actually was Me.",
+	//generic c-story, inserting Me as a character, therefore currently elf/orc
+	text: " 'Who’s there?' I called out, trying hard to keep my voice as calm as I surely was not. 'Uhm… me?' said a meek little voice from down on the ground. “Who’s asking?” Asked the thing. I looked around, couldn't find it at first, but then it's brilliant color stood out to me like a diamant would in so much muddy water. It was a bright shade of %color%, a color I'd always liked. Its appearance comforted me, so I gave it my name. %name%. And it took me a long and difficult to explain sort of conversation to find out that the things name actually was Me.",
 	type: "cStory",
 	id: "cStoryA",
 	validFutures: [
@@ -301,7 +302,7 @@ PlotPoints.push({
 
 PlotPoints.push({
 	// cStory for aliens, inserting Squisch as a character
-	text: " 'What are you?' I asked, looking down at the squishiness now right next to my foot. 'I am Squisch, thank you very much, do not apologize for stepping on my head, oh no, why would you!' answered the little…well, answered Squisch. 'What are you?' I repeated the question, because I wasn’t sure I’d gotten the answer yet.",
+	text: " 'What are you?' I asked, looking down at the squishiness now right next to my foot. The one truly remarkable thing about it was it's color, it was a violent %color%. 'I am Squisch, thank you very much, do not apologize for stepping on my head, oh no, why would you!' answered the little…well, answered Squisch. 'What are you?' I repeated the question, because I wasn’t sure I’d gotten the answer yet.",
 	type: "cStory",
 	id: "cStoryB",
 	validFutures: [
@@ -322,13 +323,13 @@ PlotPoints.push({
 
 PlotPoints.push({
 	// promise for Me as a sidekick, therefore currently for elfs/Orcs 
-	text: "Me and me sat there and talked for a while about little things. About how Me came to be here and how I had come to be here. 'So, you’re looking for your family?' Me asked me for the third time. 'But you don’t know where they are?' I just nodded. It wasn’t that Me didn’t know the answer already. 'But apart from that you don’t have anything to do?' Me continued. I thought about that question for a moment and concluded that this was true, even though it was a very big ‘apart’. I nodded again. 'Good! Then you can help me do something I want to do and when I’ve done that, I can totally help you doing the thing that you want to do!' Me shrieked in quite a high-pitched voice. 'What do you want help with?' I asked. 'I want to be a mighty games programmer!' Me very nearly shouted, 'I want to make the games of the future! But for that, I need to hand this many many things into to the Academy of Games… I have them, that’s not the problem, but… look, my fingers are all long and strong, good for programming, but my arms are…' Me pointed at the very nearly inexistent lengths of limbs that had to be called arms, because they connected Mes torso and hands. 'They just aren’t strong enough to carry all this heavy, heady code. But if you help me get it there, then I will get in and I’ll program a game that makes it super fun and interesting for all the people in this part of the world to find your family! And so they will! And so YOU will!'",
+	text: "There was nothing for it but to talk to the little thing, so I sat down and Me sat down and the two of us sat there and talked for a while about little things. About how Me came to be here and how I had come to be here. 'So, you’re looking for your family?' Me asked me for the third time. 'But you don’t know where they are?' I just nodded. It wasn’t that Me didn’t know the answer already. 'But apart from that you don’t have anything to do?' Me continued. I thought about that question for a moment and concluded that this was true, even though it was a very big ‘apart’. I nodded again. 'Good! Then you can help me do something I want to do and when I’ve done that, I can totally help you doing the thing that you want to do!' Me shrieked in quite a high-pitched voice. 'What do you want help with?' I asked. 'I want to be a mighty games programmer!' Me very nearly shouted, 'I want to make the games of the future! But for that, I need to hand this many many things into to the Academy of Games… I have them, that’s not the problem, but… look, my fingers are all long and strong, good for programming, but my arms are…' Me pointed at the very nearly inexistent lengths of limbs that had to be called arms, because they connected Mes torso and hands. 'They just aren’t strong enough to carry all this heavy, heady code. But if you help me get it there, then I will get in and I’ll program a game that makes it super fun and interesting for all the people in this part of the world to find your family! And so they will! And so YOU will!'",
 	type: "promise",
 	id: "promiseA",
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: [""]
+		ids: ["midpointA"]
 	},
 	{
 		rule: "allowedIds",
@@ -349,7 +350,7 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: [""]
+		ids: ["midpointB"]
 	},
 	{
 		rule: "allowedIds",
@@ -370,11 +371,260 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: [""]
+		ids: ["midpointC"]
 	},
 	{
 		rule: "allowedIds",
 		ids: []
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	// promise with Me, therefore elf/orc
+	text: "I would love to tell you about my adventures with Me in more detail, but helping them get their code to the Academy, helping them finish that task just took too much time and now… now we’ve arrived at the point, where the story started. On the %landscape% that Me will call home from now on, that I will call home from now on, until I find my family again. The academy is beautiful and Me got accepted into it and all I want to do is sit down with Me and help write that game that will make people look for my family. I know I can’t find them by myself. And I know, if I want people to help, I need to give them an incentive. Me explained a lot about incentives the other day, but I didn’t really listen, I think because I didn’t have any incentive to do so. Anyway. I will help with this great game.",
+	type: "midpoint",
+	id: "midpointA",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: [""]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["finaleA", "finaleB"]
+	},
+	{
+		rule: "forbiddenIds",
+		ids: ["finaleC", "finaleE", "finaleD"]
+	}]
+});
+
+
+PlotPoints.push({
+	// midpoint with Squisch, therefore allien, having to reach the mistresses
+	text: "And so it was. Squischie took me through half this world, but when we finally arrived at the edge of that %landscape%, it was so beautiful, so heartachingly perfect that I nearly forgot I’d come here to go back home. In the middle of the %landscape% there was a castle, even though Squischie had to explain the term to be, because where I come from, we never had them. It looked grim, in a way. But also romantic and yes, aliens also do have romances, just like you. When we came into the reals of the arcane mistresses of invisible writings, things changed with every step and by the time we got close enough to actually make out the individual towers on the castle, our bodies were lifted of the ground and we flew that last bit to its main gate. In my galaxy, flying is quite usual. But I know that here many creatures can’t do it, so I understand how special that moment was. We drifted to the ground and walked through the first arch into a high courtyard. Many people, presumably the mistresses, said on benches and the floors, on desks and in trees. In front of them, they all had small, mostly black but sometimes silvery devices with a flashing sort of screen on one side and something to lean your fingers on and hammer against on the other.",
+	type: "midpoint",
+	id: "midpointB",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: [""]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["finaleC", "finaleD"]
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	// Midpoint with Me, therefore allien, having to return the book.
+	text: "Squisch laughed at that and its sort of furry outer layer vibrated in vibrant shades of %color%. Then, it gave me the answer I could have come up with on my own: It didn’t need to have beaming in this galaxy, when they clearly had it in mine. My many-tentacled family would round about now notice that I was gone, find my last given coordinates, ask the galaxys’ artificial intelligence where I’d gone and to beam me back before my cosy, nightly pond had started to cool. Of course! Just because my galaxy was on the other end of the universe, it did still exist. ",
+	type: "midpoint",
+	id: "midpointC",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: ["finaleE"]
+	},
+	{
+		rule: "allowedIds",
+		ids: []
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	// finale for elf
+	text: "And helping with that great game will make me feel better, will make me not think of the tree I lived on and the friends I had there. I think, that’s going to be important, given that I’d be very sad, if I didn’t have something else to think about. I looked out again over this wonderful landscape, looked over at Me and started a new adventure, on which I will speak on a different day. It will be the adventure of a Me, an elf and a great game.",
+	type: "finale",
+	id: "finaleA",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: [""]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["closingImageA", "closingImageB", "closingImageC"]
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	// finale for orc
+	text: "I always liked games. Games and stories. I’ll make a game that shows people how those rolling hills looked when they were crawling with cute little baby orcs and I’ll make them understand why it is so important for me to get that back. Maybe you can help me too; maybe you can think of your favourite games tonight, just before you go to sleep. Maybe you’ll dream about them and then I can come into that dream, with my long, thinfingered orc hands, and snatch a tiny little bit of that dream, so it can go into my game. ",
+	type: "finale",
+	id: "finaleB",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: ["closingImageA", "closingImageB", "closingImageC"]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["closingImageA", "closingImageB", "closingImageC"]
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	text: "’Meeeep’, said one of them as we entered. ‘Squischie-Squisch is back with the alien! Oh my, what splendid tentacles. Come over here, allien, I send you back!’ I stepped up to the figure, who rapidly began to hammer things onto the black interfacial thing in front of them again. ‘Here! Look! I got the program all up and running, right next to the one where the ice caps melt and the world sinks under the sea for ever!’ The mistress said. ‘I did both of them last night, because we were out of canned tuna and I was annoyed. Do you want me to send you back?’ ‘Uhm…. Yes?’ I asked, because I didn’t really know what sending the world under the sea would mean. It sounded unpleasant though and I did want to go back home. ‘Great! I just need to press this button here and…’  the mistress of invisible writings pressed the button, I blurred, looked back once at Squisch who was grinning and was catapulted back into my home galaxy.",
+	type: "finale",
+	id: "finaleC",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: [""]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["closingImageA", "closingImageB", "closingImageC"]
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	// finale for alliens, destroying the fabric of the universe
+	text: "’Meeeep’, said one of them as we entered. ‘Squischie-Squisch is back with the alien! Oh my, what splendid tentacles. Come over here, allien, I send you back!’ I stepped up to the figure, who rapidly began to hammer things onto the black interfacial thing in front of them again. ‘Here! Look! I got the program all up and running, right next to the one that disentangles the fabric of the universe!’ The mistress said. ‘I did both of them last night, because we were out of canned tuna and I was annoyed. Do you want me to send you back?’ ‘Uhm…. Yes?’ I asked, because I didn’t really know what sending the world under the sea would mean. It sounded unpleasant though and I did want to go back home. ‘Great! I just need to press this button here and…’  ‘Not that one, Judy, you changed the interface so that one was…’ shouted another one of the mistresses of the invisible writing. I saw Judy lower a finger, I saw the flicker of understanding in their eyes just after they’d pressed. And with that, quietly but definitely, the fabric of the universe disentangles.",
+	type: "finale",
+	id: "finaleD",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: [""]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["closingImageA", "closingImageB", "closingImageC"]
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	// finale for alliens who need to return the book
+	text: "I grasped the book tighter, looked over one last time in the middle of this wonderful world, felt the tugging of a laser beam being focused at my brain and with ‘the consequences of gamification on inter-personal-relations – a comic manual by J.R.R. Squisch’ clenched between my second and my fourteenth tentacle, I disappeared from the face of this earth.",
+	type: "finale",
+	id: "finaleE",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: [""]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["closingImageA", "closingImageB", "closingImageC"]
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+
+
+PlotPoints.push({
+	text: "There, on a sprawling  %landscape% under a bleak sky and with the gentle turning of worlds in my ears is where the story ended.",
+	type: "closingImage",
+	id: "closingImageA",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: ["theEnd"]
+	},
+	{
+		rule: "allowedIds",
+		ids: []
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	text: "There, within the milky mists of a %landscape% with the adventures all in front of me and the quiet settling into my chest is where the story ended.",
+	type: "closingImage",
+	id: "closingImageB",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: ["theEnd"]
+	},
+	{
+		rule: "allowedIds",
+		ids: []
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	text: "There, right on the rough %landscape% is where the story ended. And that, my friends, that is a fact.",
+	type: "closingImage",
+	id: "closingImageC",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: ["theEnd"]
+	},
+	{
+		rule: "allowedIds",
+		ids: []
+	},
+	{
+		rule: "forbiddenIds",
+		ids: []
+	}]
+});
+
+
+PlotPoints.push({
+	text: "   ~~ THE END ~~   ",
+	type: "theEnd",
+	id: "theEnd",
+	validFutures: [
+	{
+		rule: "requiredIds",
+		ids: [""]
+	},
+	{
+		rule: "allowedIds",
+		ids: ["thEnd"]
 	},
 	{
 		rule: "forbiddenIds",
@@ -394,147 +644,7 @@ PlotPoints.push({
 	},
 	{
 		rule: "allowedIds",
-		ids: []
-	},
-	{
-		rule: "forbiddenIds",
-		ids: []
-	}]
-});
-
-
-PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
-	validFutures: [
-	{
-		rule: "requiredIds",
-		ids: [""]
-	},
-	{
-		rule: "allowedIds",
-		ids: []
-	},
-	{
-		rule: "forbiddenIds",
-		ids: []
-	}]
-});
-
-
-PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
-	validFutures: [
-	{
-		rule: "requiredIds",
-		ids: [""]
-	},
-	{
-		rule: "allowedIds",
-		ids: []
-	},
-	{
-		rule: "forbiddenIds",
-		ids: []
-	}]
-});
-
-
-PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
-	validFutures: [
-	{
-		rule: "requiredIds",
-		ids: [""]
-	},
-	{
-		rule: "allowedIds",
-		ids: []
-	},
-	{
-		rule: "forbiddenIds",
-		ids: []
-	}]
-});
-
-
-PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
-	validFutures: [
-	{
-		rule: "requiredIds",
-		ids: [""]
-	},
-	{
-		rule: "allowedIds",
-		ids: []
-	},
-	{
-		rule: "forbiddenIds",
-		ids: []
-	}]
-});
-
-
-PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
-	validFutures: [
-	{
-		rule: "requiredIds",
-		ids: [""]
-	},
-	{
-		rule: "allowedIds",
-		ids: []
-	},
-	{
-		rule: "forbiddenIds",
-		ids: []
-	}]
-});
-
-
-PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
-	validFutures: [
-	{
-		rule: "requiredIds",
-		ids: [""]
-	},
-	{
-		rule: "allowedIds",
-		ids: []
-	},
-	{
-		rule: "forbiddenIds",
-		ids: []
-	}]
-});
-
-
-PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
-	validFutures: [
-	{
-		rule: "requiredIds",
-		ids: [""]
-	},
-	{
-		rule: "allowedIds",
-		ids: []
+		ids: ["thEnd"]
 	},
 	{
 		rule: "forbiddenIds",

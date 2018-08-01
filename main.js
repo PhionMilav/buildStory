@@ -45,7 +45,23 @@ function buildStory() {
   ppPromise = db.getPlotPoints("promise", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
   selectedPlotPoints.push(ppPromise);
   populateFutureIds(ppPromise);
-  
+
+  ppMidpoint = db.getPlotPoints("midpoint", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
+  selectedPlotPoints.push(ppMidpoint);
+  populateFutureIds(ppMidpoint);  
+
+
+  ppFinale = db.getPlotPoints("finale", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
+  selectedPlotPoints.push(ppFinale);
+  populateFutureIds(ppFinale);  
+
+  ppClosingImage = db.getPlotPoints("closingImage", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
+  selectedPlotPoints.push(ppClosingImage);
+  populateFutureIds(ppClosingImage);  
+
+  ppTheEnd = db.getPlotPoints("theEnd", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
+  selectedPlotPoints.push(ppTheEnd);
+
  
 }
 
