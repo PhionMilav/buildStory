@@ -42,6 +42,10 @@ function buildStory() {
   selectedPlotPoints.push(ppCStory);
   populateFutureIds(ppCStory);
   
+  ppPromise = db.getPlotPoints("promise", requiredFutureIds, allowedFutureIds, forbiddenFutureIds)
+  selectedPlotPoints.push(ppPromise);
+  populateFutureIds(ppPromise);
+  
  
 }
 
@@ -102,6 +106,7 @@ texts = [];
 		
 		const outputDiv = document.getElementById("output");
 		outputDiv.innerHTML = '';
+
 		for (let text of texts) {
 		    const textDiv = document.createElement('div');
 		    textDiv.classList.add('text');

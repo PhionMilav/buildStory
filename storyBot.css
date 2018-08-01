@@ -23,11 +23,11 @@ body{
 	margin-right: auto;
 }
 
-#output.text {
+#output .text {
   padding: 12px 0 12px 0;
 }
 
-#output.text {
+#output .text {
   padding: 12px 0 12px 0;
   transition: 
     opacity 1s ease,
@@ -35,7 +35,7 @@ body{
   opacity: 0;
 }
 
-#output.text.active {
+#output .text.active {
   opacity: 1;
   color: purple;
 }

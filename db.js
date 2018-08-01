@@ -183,7 +183,7 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: [""]
+		ids: ["bStoryC", "promiseB"]
 	},
 	{
 		rule: "allowedIds",
@@ -203,7 +203,7 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: ["bStoryC"]
+		ids: ["bStoryC", "promiseC"]
 	},
 	{
 		rule: "allowedIds",
@@ -279,21 +279,21 @@ PlotPoints.push({
 
 PlotPoints.push({
 	//generic c-story, inserting Me as a character
-	text: " 'Who’s there?' I called out, trying hard to keep my voice as calm as I surely was not. 'Uhm… me?' said a meek little voice from down on the ground. “Who’s asking?” I told the thing that I still got not say who I was. I gave it my name. %name%. And it took me a long and difficult to explain sort of conversation to find out that the things name actually was Me.",
+	text: " 'Who’s there?' I called out, trying hard to keep my voice as calm as I surely was not. 'Uhm… me?' said a meek little voice from down on the ground. “Who’s asking?” Asked the thing. I gave it my name. %name%. And it took me a long and difficult to explain sort of conversation to find out that the things name actually was Me.",
 	type: "cStory",
 	id: "cStoryA",
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: [""]
+		ids: ["promiseA"]
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["promiseA"]
 	},
 	{
 		rule: "forbiddenIds",
-		ids: []
+		ids: ["promiseB", "promiseC"]
 	}]
 });
 
@@ -307,23 +307,24 @@ PlotPoints.push({
 	validFutures: [
 	{
 		rule: "requiredIds",
-		ids: [""]
+		ids: []
 	},
 	{
 		rule: "allowedIds",
-		ids: []
+		ids: ["promiseB", "promiseC"]
 	},
 	{
 		rule: "forbiddenIds",
-		ids: []
+		ids: ["promiseA"]
 	}]
 });
 
 
 PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
+	// promise for Me as a sidekick, therefore currently for elfs/Orcs 
+	text: "Me and me sat there and talked for a while about little things. About how Me came to be here and how I had come to be here. 'So, you’re looking for your family?' Me asked me for the third time. 'But you don’t know where they are?' I just nodded. It wasn’t that Me didn’t know the answer already. 'But apart from that you don’t have anything to do?' Me continued. I thought about that question for a moment and concluded that this was true, even though it was a very big ‘apart’. I nodded again. 'Good! Then you can help me do something I want to do and when I’ve done that, I can totally help you doing the thing that you want to do!' Me shrieked in quite a high-pitched voice. 'What do you want help with?' I asked. 'I want to be a mighty games programmer!' Me very nearly shouted, 'I want to make the games of the future! But for that, I need to hand this many many things into to the Academy of Games… I have them, that’s not the problem, but… look, my fingers are all long and strong, good for programming, but my arms are…' Me pointed at the very nearly inexistent lengths of limbs that had to be called arms, because they connected Mes torso and hands. 'They just aren’t strong enough to carry all this heavy, heady code. But if you help me get it there, then I will get in and I’ll program a game that makes it super fun and interesting for all the people in this part of the world to find your family! And so they will! And so YOU will!'",
+	type: "promise",
+	id: "promiseA",
 	validFutures: [
 	{
 		rule: "requiredIds",
@@ -341,9 +342,10 @@ PlotPoints.push({
 
 
 PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
+	// promise for Squisch as a sidekick;  for aliens who's spacesuit broke
+	text: "‘I’m a ball of magic, what does it look like?’ bluffed Squisch. ‘Really?’ I asked, raising one of my tentacled eyebrows. ‘Of course not, silly. I’m just Squsich, Squischie for short. And you are %name%, right’” ‘Right?’ I answered, but my tone of voice made this a question again. How could this little, ill tempered thing know my name? It had even pronounced it right, which wasn’t easy to do with the kind of tongue it seemed to have. ‘I know everything!’ Squisch answered. ‘I know that you come from a different galaxy, for example! Your spacesuit broke and now you’re here and you’re trying to get back. I hate helping, but I am just Squisch. I get ordered around by the arcane mistresses of the invisible writings all the time. Squisch do this, Squisch do…’ I cut the thing short. ‘The what?’, I asked. I didn’t even know what a mistress was. ‘The arcane mistresses of invisible writings of course! They live over on the %landscape% and they write with funky brackets and magic braces and they make things happen with invisible words! Also, they’re much nicer than Squisch, so they sent me to come and fetch you, so they can write the words to get you back home!’",
+	type: "promise",
+	id: "promiseB",
 	validFutures: [
 	{
 		rule: "requiredIds",
@@ -361,9 +363,10 @@ PlotPoints.push({
 
 
 PlotPoints.push({
-	text: "",
-	type: "",
-	id: "",
+	// promise with Squisch as a sidekick; for aliens who heard a voice in their head
+	text: "‘I’m a ball of magic, what does it look like?’ bluffed Squisch. ‘Really?’ I asked, raising one of my tentacled eyebrows. ‘Of course not, silly. I’m just Squsich, Squischie for short. And you are %name%, right’” ‘Right?’ I answered, but my tone of voice made this a question again. How could this little, ill tempered thing know my name? It had even pronounced it right, which wasn’t easy to do with the kind of tongue it seemed to have. ‘I know everything!’ Squisch answered. ‘I know that you come from a different galaxy, for example! You heard that voice in your head that told you to push the button and go to a different galaxy for no good reason, right? That was my voice!’ ‘I thought that was mine…’ I mumbled, but as you can tell, I wasn’t really sure anymore. It’d been a strange voice, but I am also a strange alien, so I didn’t think much of it, until I met Squisch. ‘Why did you tell me to get out of my galaxy?’ I asked, dreading the answer before I knew it. ‘Because I needed somebody to carry this book of instructions over to your galaxy for me and I couldn’t beam it, because they haven’t invented beaming on this planet’ Squisch stated. It groped around in its furriness for a moment and held out a rather thin book. It’s title read ‘the consequences of gamification on inter-personal-relations – a comic manual by J.R.R. Squisch’. I took it. ‘And now?’ I asked. ‘Now you’ve got me and the book here. How are we going to get back home?’",
+	type: "promise",
+	id: "promiseC",
 	validFutures: [
 	{
 		rule: "requiredIds",
